@@ -1,0 +1,13 @@
+git clone https://github.com/excalidraw/excalidraw.git
+cd excalidraw
+vim Dockerfile
+docker build -t excalidraw-arm .
+
+
+docker run -d \
+  --name excalidraw \
+  -p 3001:80 \
+  --restart unless-stopped \
+  -e NODE_ENV=production \
+  excalidraw-arm:latest
+
