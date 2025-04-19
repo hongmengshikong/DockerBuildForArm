@@ -2,5 +2,6 @@ git clone https://github.com/skyblueee/sqli-labs-php7.git
 cd sqli-labs-php7
 vim Dockerfile
 vim docker-entrypoint.sh
+vim init-db.sh 
 docker build -t sqli-labs-arm .
 docker run -it -d --name sqli-labs -p 8081:80 sqli-labs-arm
