@@ -27,7 +27,10 @@ RUN mkdir -p /var/lib/mysql \
 
 # 设置启动脚本
 COPY docker-entrypoint.sh /usr/local/bin/
+COPY init-db.sh /usr/local/bin/init-db.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+RUN chmod +x /usr/local/bin/init-db.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 80
